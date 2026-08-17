@@ -1,0 +1,280 @@
+"""Realistic DEMO MODE dataset for the built-in sample repository "demo-commerce-api".
+
+Everything here is clearly synthetic / curated for demonstration purposes. The
+CVE identifiers referenced are real, publicly documented advisories for the
+named open-source packages, reused here to make the demo believable — but the
+"demo-commerce-api" repository itself is a fictional sample application, not
+a real scanned target. All results derived from this module MUST be labeled
+DEMO MODE in the UI.
+"""
+from __future__ import annotations
+
+DEMO_REPO = {
+    "name": "demo-commerce-api",
+    "full_name": "sentinelchain-demo/demo-commerce-api",
+    "url": "https://github.com/sentinelchain-demo/demo-commerce-api",
+    "description": "Sample Node.js/Express e-commerce backend used to demonstrate SentinelChain AI in DEMO MODE.",
+    "primary_language": "JavaScript",
+    "languages": ["JavaScript", "TypeScript"],
+    "frameworks": ["Express", "Mongoose"],
+    "package_managers": ["npm"],
+    "dependency_files": ["package.json", "package-lock.json"],
+    "file_count": 184,
+    "default_branch": "main",
+}
+
+# name, version, ecosystem, license, is_direct, depth, parent (None = application root)
+DEMO_COMPONENTS = [
+    {"name": "express", "version": "4.17.1", "ecosystem": "npm", "license": "MIT", "is_direct": True, "depth": 0, "parent": None, "latest_version": "4.19.2"},
+    {"name": "lodash", "version": "4.17.15", "ecosystem": "npm", "license": "MIT", "is_direct": True, "depth": 0, "parent": None, "latest_version": "4.17.21"},
+    {"name": "axios", "version": "0.21.1", "ecosystem": "npm", "license": "MIT", "is_direct": True, "depth": 0, "parent": None, "latest_version": "1.7.4"},
+    {"name": "jsonwebtoken", "version": "8.5.1", "ecosystem": "npm", "license": "MIT", "is_direct": True, "depth": 0, "parent": None, "latest_version": "9.0.2"},
+    {"name": "mongoose", "version": "5.13.14", "ecosystem": "npm", "license": "MIT", "is_direct": True, "depth": 0, "parent": None, "latest_version": "8.5.2"},
+    {"name": "ejs", "version": "3.1.6", "ecosystem": "npm", "license": "Apache-2.0", "is_direct": True, "depth": 0, "parent": None, "latest_version": "3.1.10"},
+    {"name": "moment", "version": "2.29.1", "ecosystem": "npm", "license": "MIT", "is_direct": True, "depth": 0, "parent": None, "latest_version": "2.30.1"},
+    {"name": "node-fetch", "version": "2.6.0", "ecosystem": "npm", "license": "MIT", "is_direct": True, "depth": 0, "parent": None, "latest_version": "2.7.0"},
+    {"name": "dotenv", "version": "16.0.3", "ecosystem": "npm", "license": "BSD-2-Clause", "is_direct": True, "depth": 0, "parent": None, "latest_version": "16.4.5"},
+    {"name": "helmet", "version": "6.0.1", "ecosystem": "npm", "license": "MIT", "is_direct": True, "depth": 0, "parent": None, "latest_version": "7.1.0"},
+    {"name": "cors", "version": "2.8.5", "ecosystem": "npm", "license": "MIT", "is_direct": True, "depth": 0, "parent": None, "latest_version": "2.8.5"},
+    {"name": "bcryptjs", "version": "2.4.3", "ecosystem": "npm", "license": "MIT", "is_direct": True, "depth": 0, "parent": None, "latest_version": "2.4.3"},
+    {"name": "stripe", "version": "12.5.0", "ecosystem": "npm", "license": "MIT", "is_direct": True, "depth": 0, "parent": None, "latest_version": "16.2.0"},
+    {"name": "winston", "version": "3.8.2", "ecosystem": "npm", "license": "MIT", "is_direct": True, "depth": 0, "parent": None, "latest_version": "3.13.1"},
+    {"name": "left-pad-utils", "version": "0.0.3", "ecosystem": "npm", "license": "Unknown", "is_direct": True, "depth": 0, "parent": None, "latest_version": None, "suspicious": True,
+     "suspicious_reason": "Published 4 days ago by a single-release account, near-zero download history, and name closely mimics a defunct popular package (dependency-confusion pattern)."},
+    # transitive
+    {"name": "body-parser", "version": "1.19.0", "ecosystem": "npm", "license": "MIT", "is_direct": False, "depth": 1, "parent": "express", "latest_version": "1.20.2"},
+    {"name": "qs", "version": "6.5.2", "ecosystem": "npm", "license": "BSD-3-Clause", "is_direct": False, "depth": 2, "parent": "body-parser", "latest_version": "6.11.2"},
+    {"name": "follow-redirects", "version": "1.14.7", "ecosystem": "npm", "license": "MIT", "is_direct": False, "depth": 1, "parent": "axios", "latest_version": "1.15.6"},
+    {"name": "minimist", "version": "1.2.0", "ecosystem": "npm", "license": "MIT", "is_direct": False, "depth": 2, "parent": "mkdirp", "latest_version": "1.2.8"},
+    {"name": "mkdirp", "version": "0.5.1", "ecosystem": "npm", "license": "MIT", "is_direct": False, "depth": 1, "parent": "mongoose", "latest_version": "0.5.6"},
+    {"name": "semver", "version": "6.3.0", "ecosystem": "npm", "license": "ISC", "is_direct": False, "depth": 1, "parent": "mongoose", "latest_version": "6.3.1"},
+    {"name": "ms", "version": "2.1.2", "ecosystem": "npm", "license": "MIT", "is_direct": False, "depth": 1, "parent": "express", "latest_version": "2.1.3"},
+    {"name": "debug", "version": "2.6.9", "ecosystem": "npm", "license": "MIT", "is_direct": False, "depth": 1, "parent": "express", "latest_version": "4.3.5"},
+    {"name": "cookie", "version": "0.4.0", "ecosystem": "npm", "license": "MIT", "is_direct": False, "depth": 1, "parent": "express", "latest_version": "0.6.0"},
+    {"name": "send", "version": "0.17.1", "ecosystem": "npm", "license": "MIT", "is_direct": False, "depth": 1, "parent": "express", "latest_version": "0.18.0"},
+    {"name": "safe-regex2", "version": "2.0.0", "ecosystem": "npm", "license": "MIT", "is_direct": False, "depth": 1, "parent": "helmet", "latest_version": "2.0.0"},
+    {"name": "kareem", "version": "2.5.1", "ecosystem": "npm", "license": "Apache-2.0", "is_direct": False, "depth": 1, "parent": "mongoose", "latest_version": "2.5.1"},
+    {"name": "sift", "version": "16.0.1", "ecosystem": "npm", "license": "MIT", "is_direct": False, "depth": 1, "parent": "mongoose", "latest_version": "17.1.3"},
+    {"name": "agentkeepalive", "version": "4.2.1", "ecosystem": "npm", "license": "MIT", "is_direct": False, "depth": 1, "parent": "stripe", "latest_version": "4.5.0"},
+]
+
+# Vulnerability specs keyed by component name. Uses real, public advisory IDs
+# for realism inside this synthetic demo scenario.
+DEMO_VULNERABILITIES = [
+    {
+        "component": "ejs", "cve_id": "CVE-2022-29078", "ghsa_id": "GHSA-phwq-j96m-2c2q",
+        "severity": "CRITICAL", "cvss_score": 9.8, "fixed_version": "3.1.7",
+        "summary": "Server-Side Template Injection leading to Remote Code Execution",
+        "description": "ejs versions prior to 3.1.7 do not neutralize the `outputFunctionName` / settings options, allowing an attacker who influences template render options to break out of the template context and execute arbitrary Node.js code on the server.",
+        "exploit_available": True, "published_days_ago": 820,
+        "references": ["https://github.com/advisories/GHSA-phwq-j96m-2c2q", "https://nvd.nist.gov/vuln/detail/CVE-2022-29078"],
+        "reachable": True, "entry_point": "GET /api/products/:id/description-preview",
+        "vulnerable_function": "ejs.render()",
+        "call_path": [
+            "HTTP Request → GET /api/products/:id/description-preview",
+            "routes/products.js: previewDescription()",
+            "services/templateService.js: renderPreview(userSuppliedTemplateOptions)",
+            "node_modules/ejs/lib/ejs.js: exports.render()",
+            "Vulnerable option-parsing path reaches Function() constructor",
+        ],
+        "reach_explanation": "The `/products/:id/description-preview` endpoint passes query-string-controlled rendering options directly into ejs.render() without an allowlist. This is the exact sink described in GHSA-phwq-j96m-2c2q, so the vulnerable code path is directly reachable from unauthenticated, user-controlled input.",
+    },
+    {
+        "component": "jsonwebtoken", "cve_id": "CVE-2022-23529", "ghsa_id": "GHSA-hjrf-2m68-5959",
+        "severity": "CRITICAL", "cvss_score": 8.1, "fixed_version": "9.0.0",
+        "summary": "Insecure key-handling allows forged token verification bypass",
+        "description": "jsonwebtoken versions before 9.0.0 can be tricked into using an attacker-supplied value as the verification secret when the `secretOrPublicKey` argument is unsanitized, allowing forged tokens to pass verification.",
+        "exploit_available": True, "published_days_ago": 950,
+        "references": ["https://github.com/advisories/GHSA-hjrf-2m68-5959", "https://nvd.nist.gov/vuln/detail/CVE-2022-23529"],
+        "reachable": True, "entry_point": "middleware/auth.js: requireAuth()",
+        "vulnerable_function": "jwt.verify()",
+        "call_path": [
+            "HTTP Request → any route behind requireAuth middleware",
+            "middleware/auth.js: requireAuth(req, res, next)",
+            "middleware/auth.js: jwt.verify(token, getSecret(req))",
+            "node_modules/jsonwebtoken/verify.js: module.exports()",
+        ],
+        "reach_explanation": "Every authenticated API route passes through `requireAuth`, which calls the vulnerable jwt.verify() implementation directly on the bearer token supplied in the Authorization header. Because this middleware sits in front of the entire authenticated surface (orders, payments, admin), the vulnerable function is reachable from every protected endpoint.",
+    },
+    {
+        "component": "lodash", "cve_id": "CVE-2020-8203", "ghsa_id": "GHSA-p6mc-m468-83gw",
+        "severity": "CRITICAL", "cvss_score": 7.4, "fixed_version": "4.17.21",
+        "summary": "Prototype Pollution in lodash.merge / zipObjectDeep",
+        "description": "Versions of lodash prior to 4.17.19/4.17.21 are vulnerable to prototype pollution via the `merge`, `mergeWith`, and `zipObjectDeep` functions, which allows an attacker to modify the prototype of Object leading to denial of service or property injection.",
+        "exploit_available": True, "published_days_ago": 1400,
+        "references": ["https://github.com/advisories/GHSA-p6mc-m468-83gw", "https://nvd.nist.gov/vuln/detail/CVE-2020-8203"],
+        "reachable": False, "entry_point": None, "vulnerable_function": "_.merge()",
+        "call_path": [
+            "scripts/admin/rebuildCatalogIndex.js (internal maintenance script, not HTTP-exposed)",
+            "utils/deepMerge.js: mergeCatalogFragments()",
+            "node_modules/lodash/merge.js",
+        ],
+        "reach_explanation": "The only call site for the vulnerable `_.merge()` sink is an internal, operator-triggered maintenance script (`scripts/admin/rebuildCatalogIndex.js`) that is not wired to any HTTP route and never receives externally-controlled input. No API endpoint, controller, or request handler imports this path, so the vulnerable function is present in the dependency tree but not reachable from user-controlled input.",
+    },
+    {
+        "component": "axios", "cve_id": "CVE-2023-45857", "ghsa_id": "GHSA-wf5p-g6vw-rhxx",
+        "severity": "HIGH", "cvss_score": 7.5, "fixed_version": "1.6.0",
+        "summary": "XSRF-TOKEN leak to third-party host when following cross-origin redirects",
+        "description": "axios up to 0.21.4 inadvertently reveals the confidential XSRF-TOKEN value by including it in the headers of every request made to any host, allowing exfiltration when a malicious or compromised endpoint is contacted.",
+        "exploit_available": False, "published_days_ago": 300,
+        "references": ["https://github.com/advisories/GHSA-wf5p-g6vw-rhxx"],
+        "reachable": True, "entry_point": "services/paymentGatewayClient.js: chargeCard()",
+        "vulnerable_function": "axios.post()",
+        "call_path": [
+            "HTTP Request → POST /api/orders/:id/checkout",
+            "routes/orders.js: checkout()",
+            "services/paymentGatewayClient.js: chargeCard(externalGatewayUrl)",
+            "node_modules/axios/lib/axios.js",
+        ],
+        "reach_explanation": "The checkout flow forwards a configurable gateway URL to axios.post(), and the vulnerable header-forwarding behavior triggers on any cross-origin redirect returned by that URL.",
+    },
+    {
+        "component": "node-fetch", "cve_id": "CVE-2022-0235", "ghsa_id": "GHSA-r683-j2x4-v87g",
+        "severity": "HIGH", "cvss_score": 6.1, "fixed_version": "2.6.7",
+        "summary": "Exposure of sensitive information via forwarded 'cookie' header on redirect",
+        "description": "node-fetch before 2.6.7 forwards the cookie header to third-party redirect targets, leaking session data.",
+        "exploit_available": False, "published_days_ago": 700,
+        "references": ["https://github.com/advisories/GHSA-r683-j2x4-v87g"],
+        "reachable": False, "entry_point": None, "vulnerable_function": "fetch()",
+        "call_path": ["services/shippingRateClient.js (server-to-server, static trusted URL, no redirect following enabled)"],
+        "reach_explanation": "node-fetch is only used to call a single hardcoded, trusted shipping-rate host with `redirect: 'error'` set, so the vulnerable redirect-forwarding path can never execute in this codebase.",
+    },
+    {
+        "component": "minimist", "cve_id": "CVE-2021-44906", "ghsa_id": "GHSA-xvch-5gv4-984h",
+        "severity": "HIGH", "cvss_score": 9.8, "fixed_version": "1.2.6",
+        "summary": "Prototype Pollution in minimist argument parsing",
+        "description": "minimist before 1.2.6 is vulnerable to prototype pollution via crafted `__proto__` argument keys.",
+        "exploit_available": True, "published_days_ago": 980,
+        "references": ["https://github.com/advisories/GHSA-xvch-5gv4-984h"],
+        "reachable": False, "entry_point": None, "vulnerable_function": "minimist()",
+        "call_path": ["Build-time only: consumed transitively by mkdirp CLI during `npm run build`, never bundled into the running server process."],
+        "reach_explanation": "minimist is pulled in only as a build-tool dependency of mkdirp and executes solely during local build scripts, never inside the deployed request-handling process.",
+    },
+    {
+        "component": "follow-redirects", "cve_id": "CVE-2023-26159", "ghsa_id": "GHSA-jchw-25xp-jwwc",
+        "severity": "HIGH", "cvss_score": 6.1, "fixed_version": "1.15.4",
+        "summary": "Improper URL handling allows absolute URL bypass of the trusted-host allowlist",
+        "description": "follow-redirects before 1.15.4 improperly parses URLs with an incomplete authority component, which can allow bypass of proxy/host allowlisting.",
+        "exploit_available": False, "published_days_ago": 500,
+        "references": ["https://github.com/advisories/GHSA-jchw-25xp-jwwc"],
+        "reachable": True, "entry_point": "services/paymentGatewayClient.js (via axios)",
+        "vulnerable_function": "RedirectableRequest._processResponse()",
+        "call_path": [
+            "HTTP Request → POST /api/orders/:id/checkout",
+            "services/paymentGatewayClient.js: chargeCard()",
+            "node_modules/axios → node_modules/follow-redirects",
+        ],
+        "reach_explanation": "follow-redirects is the transitive HTTP engine behind axios in the same checkout call path already shown reachable above.",
+    },
+    {
+        "component": "qs", "cve_id": "CVE-2022-24999", "ghsa_id": "GHSA-hrpp-h998-j3pp",
+        "severity": "HIGH", "cvss_score": 7.5, "fixed_version": "6.10.3",
+        "summary": "Denial of Service via prototype-polluted parameter arrays",
+        "description": "qs before 6.10.3 allows an attacker to crash the process by sending specially crafted query-string parameters that pollute Object.prototype.",
+        "exploit_available": True, "published_days_ago": 650,
+        "references": ["https://github.com/advisories/GHSA-hrpp-h998-j3pp"],
+        "reachable": False, "entry_point": None, "vulnerable_function": "qs.parse()",
+        "call_path": ["express → body-parser → qs (used only for `application/x-www-form-urlencoded`, which this JSON-only API never enables)"],
+        "reach_explanation": "This API is configured with `express.json()` only; the urlencoded body parser that invokes vulnerable qs.parse() is never mounted, so the sink is unreachable in the current configuration. Upgrading requires bumping body-parser's major version and is deferred for manual review because of downstream compatibility risk.",
+        "no_auto_patch": True,
+    },
+    {
+        "component": "moment", "cve_id": "CVE-2022-31129", "ghsa_id": "GHSA-wc69-rhjr-hc9g",
+        "severity": "MEDIUM", "cvss_score": 5.3, "fixed_version": "2.29.4",
+        "summary": "Regular Expression Denial of Service (ReDoS) in moment.js date parsing",
+        "description": "moment before 2.29.4 has inefficient regex parsing for certain locale-formatted date strings, allowing a ReDoS with attacker-controlled input.",
+        "exploit_available": False, "published_days_ago": 780,
+        "references": ["https://github.com/advisories/GHSA-wc69-rhjr-hc9g"],
+        "reachable": False, "entry_point": None, "vulnerable_function": "moment()",
+        "call_path": ["utils/invoiceDateFormatter.js (formats server-generated timestamps only, never parses user-supplied date strings)"],
+        "reach_explanation": "moment is only used to format internally generated timestamps; it never parses attacker-controlled date strings in this codebase, so the ReDoS sink is not exercised.",
+    },
+    {
+        "component": "semver", "cve_id": "CVE-2022-25883", "ghsa_id": "GHSA-c2qf-rxjj-qqgw",
+        "severity": "LOW", "cvss_score": 5.3, "fixed_version": "7.5.2",
+        "summary": "Regular Expression Denial of Service in semver range parsing",
+        "description": "Versions of semver before 7.5.2 are vulnerable to ReDoS via crafted version range strings.",
+        "exploit_available": False, "published_days_ago": 400,
+        "references": ["https://github.com/advisories/GHSA-c2qf-rxjj-qqgw"],
+        "reachable": False, "entry_point": None, "vulnerable_function": "semver.satisfies()",
+        "call_path": ["Used only internally by mongoose at process startup to validate the installed MongoDB driver version."],
+        "reach_explanation": "semver's range parser only ever runs once at startup against a hardcoded internal version string, never against externally supplied input.",
+    },
+]
+
+# Source snippets used by the AST / static analysis agent (illustrative, embedded inline).
+DEMO_SOURCE_FINDINGS = [
+    {
+        "file_path": "config/database.js", "line": 12, "function_name": "connect",
+        "issue_type": "Hardcoded Secret", "severity": "CRITICAL",
+        "code_snippet": 'const MONGO_URI = "mongodb://admin:SuperSecret123@prod-cluster.internal:27017/commerce";',
+        "recommendation": "Move credentials to environment variables (process.env.MONGO_URI) and rotate the exposed password immediately.",
+        "rule_id": "generic.secrets.security.detected-mongo-uri",
+    },
+    {
+        "file_path": "routes/products.js", "line": 47, "function_name": "previewDescription",
+        "issue_type": "Server-Side Template Injection", "severity": "CRITICAL",
+        "code_snippet": "const html = ejs.render(product.descriptionTemplate, req.query);",
+        "recommendation": "Never pass raw `req.query` as EJS render options. Use a fixed, allow-listed options object and pass user data only as template locals.",
+        "rule_id": "javascript.ejs.security.audit.render-options-injection",
+    },
+    {
+        "file_path": "middleware/auth.js", "line": 23, "function_name": "requireAuth",
+        "issue_type": "Vulnerable API Usage (jsonwebtoken)", "severity": "HIGH",
+        "code_snippet": "const payload = jwt.verify(token, getSecret(req), { algorithms: undefined });",
+        "recommendation": "Pin `algorithms` explicitly (e.g. ['HS256']) and upgrade jsonwebtoken to >=9.0.0 to remove the insecure key-resolution path.",
+        "rule_id": "javascript.jsonwebtoken.security.audit.unrestricted-algorithms",
+    },
+    {
+        "file_path": "routes/search.js", "line": 31, "function_name": "searchProducts",
+        "issue_type": "NoSQL Injection", "severity": "HIGH",
+        "code_snippet": "const results = await Product.find({ name: { $regex: req.query.q } });",
+        "recommendation": "Escape regex metacharacters in user input or use a full-text index with sanitized queries instead of building $regex directly from request data.",
+        "rule_id": "javascript.mongoose.security.audit.nosqli-regex",
+    },
+    {
+        "file_path": "routes/admin.js", "line": 58, "function_name": "runReportQuery",
+        "issue_type": "Command Injection", "severity": "CRITICAL",
+        "code_snippet": 'exec(`node scripts/report.js --range=${req.body.range}`);',
+        "recommendation": "Never build shell commands with string interpolation of request data. Use execFile with an argument array and strict validation of `range`.",
+        "rule_id": "javascript.lang.security.audit.exec-command-injection",
+    },
+    {
+        "file_path": "utils/deepMerge.js", "line": 9, "function_name": "mergeCatalogFragments",
+        "issue_type": "Unsafe Dependency Usage (lodash.merge)", "severity": "MEDIUM",
+        "code_snippet": "return _.merge({}, base, fragment);",
+        "recommendation": "Upgrade lodash to >=4.17.21; consider a null-prototype merge helper for defense in depth.",
+        "rule_id": "javascript.lodash.security.audit.prototype-pollution-merge",
+    },
+    {
+        "file_path": "services/paymentGatewayClient.js", "line": 18, "function_name": "chargeCard",
+        "issue_type": "Insecure Deserialization Risk", "severity": "MEDIUM",
+        "code_snippet": "const gatewayResponse = eval('(' + rawResponseBody + ')');",
+        "recommendation": "Replace eval() with JSON.parse() and validate the response schema before use.",
+        "rule_id": "javascript.lang.security.audit.eval-detected",
+    },
+]
+
+LICENSE_POLICY = "permissive-only"  # this demo repository's declared license policy
+
+DEMO_PACKAGE_JSON_BEFORE = {
+    "name": "demo-commerce-api",
+    "version": "1.4.2",
+    "dependencies": {
+        "express": "4.17.1",
+        "lodash": "4.17.15",
+        "axios": "0.21.1",
+        "jsonwebtoken": "8.5.1",
+        "mongoose": "5.13.14",
+        "ejs": "3.1.6",
+        "moment": "2.29.1",
+        "node-fetch": "2.6.0",
+        "dotenv": "16.0.3",
+        "helmet": "6.0.1",
+        "cors": "2.8.5",
+        "bcryptjs": "2.4.3",
+        "stripe": "12.5.0",
+        "winston": "3.8.2",
+        "left-pad-utils": "0.0.3",
+    },
+}

@@ -1,0 +1,25 @@
+# Python
+backend/.venv/
+backend/data/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/*.tsbuildinfo
+
+# Env
+.env
+backend/.env
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Playwright (dev-only smoke testing artifacts)
+frontend/scratch-*.mjs
